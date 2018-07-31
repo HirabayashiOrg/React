@@ -1,0 +1,28 @@
+<!DOCTYPE hmlt>
+<html lang="ja">
+<head>
+	<title>sample3</title>
+	<!-- Reactの基本的な機能 -->
+	<script crossorigin src="/js/react.production.min.js"></script>
+	<!-- HTMLのDOM操作に関する機能 -->
+	<script crossorigin src="/js/react-dom.production.min.js"></script>
+</hesad>
+<body>
+	<div id="main"></div>
+
+	<script>
+		// render
+		//   第一引数：HTML要素
+		//   第二引数：出力対象のHTML要素
+		ReactDOM.render(
+			React.createElement(
+					'h1' // 生成するタグ名
+					, null // 属性の連想配列
+					, 'Hello World !!' // タグ内部の値
+			),
+			document.getElementById('main')
+		);
+	</script>
+</body>
+</html>
+

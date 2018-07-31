@@ -1,0 +1,38 @@
+<!DOCTYPE hmlt>
+<html lang="ja">
+<head>
+	<title>sample6</title>
+	<!-- Reactの基本的な機能 -->
+	<script crossorigin src="/js/react.production.min.js"></script>
+	<!-- HTMLのDOM操作に関する機能 -->
+	<script crossorigin src="/js/react-dom.production.min.js"></script>
+	<!-- JSXを使用するために必要 -->
+	<script src="/js/browser.js"></script>
+</hesad>
+<body>
+	<div id="main"></div>
+	<div id="sample1"></div>
+	<div id="sample2"></div>
+
+	<!-- JSXを使用する場合は「type="text/babel"」 -->
+	<script type="text/babel">
+		ReactDOM.render(
+			<h1>JSX Sample</h1>,
+			document.getElementById('main')
+		);
+	</script>
+
+	<script type="text/babel">
+		ReactDOM.render(
+			[
+				<span>sample1-1</span>,
+				<br />, // 必ず閉じタグが必要
+				<span>sample1-2</span>
+			],
+			document.getElementById('sample1')
+		);
+	</script>
+</body>
+</html>
+
+

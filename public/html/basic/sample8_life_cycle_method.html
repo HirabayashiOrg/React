@@ -1,0 +1,23 @@
+<!DOCTYPE hmlt>
+<html lang="ja">
+<head>
+	<title>sample6</title>
+	<!-- Reactの基本的な機能 -->
+	<script crossorigin src="/js/react.production.min.js"></script>
+	<!-- HTMLのDOM操作に関する機能 -->
+	<script crossorigin src="/js/react-dom.production.min.js"></script>
+</hesad>
+<body>
+	<div id="main"></div>
+
+	<script>
+		// コンポーネントの定義
+		class MyComponent extends React.Component {
+			render() {}
+		ReactDOM.render(
+			React.createElement(MyComponent),
+			document.getElementById('main')
+		);
+	</script>
+</body>
+</html>

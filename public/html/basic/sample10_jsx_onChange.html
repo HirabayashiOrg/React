@@ -1,0 +1,45 @@
+<!DOCTYPE hmlt>
+<html lang="ja">
+<head>
+	<title>sample6</title>
+	<!-- Reactの基本的な機能 -->
+	<script crossorigin src="/js/react.production.min.js"></script>
+	<!-- HTMLのDOM操作に関する機能 -->
+	<script crossorigin src="/js/react-dom.production.min.js"></script>
+	<!-- JSXを使用するために必要 -->
+	<script src="/js/browser.js"></script>
+</hesad>
+<body>
+	<div id="main"></div>
+
+	<!-- JSXを使用する場合は「type="text/babel"」 -->
+	<script type="text/babel">
+		// コンポーネントの定義
+		class MyComponent extends React.Component {
+			constructor(props, context, updater) {
+				super(props, context, updater);
+				this.state = {text: 0};
+				this.doChange = this.doChage.bind(this);
+			}
+			render() {
+				return [
+					// イベントはキャメルケースで記述
+					<input type='text' onChange={this.doChange}></input>,
+					// 変数は{}でくくればイケる
+					<span>{this.state.text}</span>
+				]
+			}
+			doChage(e) {
+				this.setState({
+					text: e.target.value
+				});
+			}
+		}
+		ReactDOM.render(
+			React.createElement(MyComponent),
+			document.getElementById('main')
+		);
+	</script>
+</body>
+</html>
+

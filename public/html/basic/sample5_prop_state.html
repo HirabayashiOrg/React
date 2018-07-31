@@ -1,0 +1,49 @@
+<!DOCTYPE hmlt>
+<html lang="ja">
+<head>
+	<title>sample4</title>
+	<!-- Reactの基本的な機能 -->
+	<script crossorigin src="/js/react.production.min.js"></script>
+	<!-- HTMLのDOM操作に関する機能 -->
+	<script crossorigin src="/js/react-dom.production.min.js"></script>
+</hesad>
+<body>
+	<div id="main1"></div>
+	<div id="main2"></div>
+
+	<script>
+		// コンポーネントの定義
+		class HelloWorld1 extends React.Component {
+			render() {
+				return React.createElement(
+					'h1'
+					, null
+					, this.props.val // プロパティにはthis.propsでアクセス可能
+				);
+			}
+		}
+		class HelloWorld2 extends React.Component {
+			constructor(props, context, updater) {
+				super(props, context, updater);
+				this.state = {status: 'Hello World !!!'};
+			}
+			render() {
+				return React.createElement('h1', null, this.state.status);
+			}
+		}
+		// コンポーネントの登録
+		ReactDOM.render(
+			React.createElement(
+				HelloWorld1 // コンポーネント
+				, {val: 'Hello World !!!'} // プロパティにセットする連想配列
+			),
+			document.getElementById('main1')
+		);
+		ReactDOM.render(
+			React.createElement(HelloWorld2, {val: 'Hello World !!!'}),
+			document.getElementById('main2')
+		);
+	</script>
+</body>
+</html>
+
